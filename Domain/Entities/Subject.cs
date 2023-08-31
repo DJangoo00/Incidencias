@@ -7,6 +7,7 @@ namespace Domain.Entities
 {
     public class Subject : BaseEntity
     {
-        
+        public int IdPersonFk { get; set;}
+        public int IdClassroomFk { get; set;}
     }
 }

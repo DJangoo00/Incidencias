@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Departament : BaseEntity
+    public class Gender : BaseEntity
     {
-        public string Name { get; set; }
-        public int IdCountryTypeFk { get; set;}
+        public string Name { get; set;}
     }
 }

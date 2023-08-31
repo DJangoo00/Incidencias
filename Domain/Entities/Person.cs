@@ -9,5 +9,10 @@ namespace Domain.Entities
     {
         public string FirstName { get; set; }
         public string LastName { get; set;}
+        public string Adress { get; set;}
+        public int IdGenderFk { get; set;}
+        public int IdCityFk { get; set;}
+        public int IdPersonTypeFk { get; set;}
+
     }
 }
