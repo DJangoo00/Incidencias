@@ -9,5 +9,7 @@ namespace Domain.Entities
     {
         public string Name { get; set; }
         public int Capacity { get; set; }
+        public ICollection<Subject> Subjects { get; set; }
+        public ICollection<TrainerClassroom> TrainerClassrooms { get; set; }
     }
 }

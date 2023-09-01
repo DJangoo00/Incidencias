@@ -9,5 +9,7 @@ namespace Domain.Entities
     {
         public string Name { get; set; }
         public int IdCountryTypeFk { get; set;}
+        public Country Country { get; set;}
+        public ICollection<City> Cities { get; set;}
     }
 }

@@ -9,5 +9,7 @@ namespace Domain.Entities
     {
         public string Name { get; set; }
         public int IdDepartamentFk { get; set;}
+        public Departament Departament { get; set; }
+        public ICollection<Person> Persons { get; set; }
     }
 }
