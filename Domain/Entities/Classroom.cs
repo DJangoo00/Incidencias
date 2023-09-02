@@ -11,5 +11,7 @@ namespace Domain.Entities
         public int Capacity { get; set; }
         public ICollection<Subject> Subjects { get; set; }
         public ICollection<TrainerClassroom> TrainerClassrooms { get; set; }
+
+        public ICollection<Person> Persons { get; set; }
     }
 }

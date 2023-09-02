@@ -35,7 +35,7 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>
         builder.HasOne(e => e.Gender)
         .WithMany(p => p.Persons)
         .HasForeignKey(p => p.IdGenderFk);
-        
+
         builder.HasOne(e => e.City)
         .WithMany(p => p.Persons)
         .HasForeignKey(p => p.IdCityFk);
@@ -43,5 +43,22 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>
         builder.HasOne(e => e.PersonType)
         .WithMany(p => p.Persons)
         .HasForeignKey(p => p.IdPersonTypeFk);
+
+        builder
+        .HasMany(p => p.Classrooms)
+        .WithMany(p => p.Persons)
+        .UsingEntity<TrainerClassroom>(
+            j => j
+        .HasOne(pt => pt.Classroom)
+        .WithMany(t => t.TrainerClassrooms)
+        .HasForeignKey(pt => pt.IdClassroom),
+            j => j
+        .HasOne(pt => pt.Person)
+        .WithMany(t => t.TrainerClassrooms)
+        .HasForeignKey(pt => pt.IdPerson),
+            j =>
+        {
+            j.HasKey(t => new { t.IdClassroom, t.IdPerson});
+        });
     }
 }

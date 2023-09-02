@@ -19,6 +19,7 @@ namespace Domain.Entities
 
         public ICollection<Subject> Subjects { get; set;}
         public ICollection<TrainerClassroom> TrainerClassrooms { get; set;}
+        public ICollection<Classroom> Classrooms { get; set;}
 
     }
 }
