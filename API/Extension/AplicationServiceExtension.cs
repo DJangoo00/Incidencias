@@ -1,4 +1,6 @@
+using App.UnitOfWork;
 using AspNetCoreRateLimit;
+using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
@@ -13,6 +15,10 @@ public static class AplicationServiceExtension
             .AllowAnyMethod()
             .AllowAnyHeader());
     });
+    public static void AddAplicationServices (this IServiceCollection services)
+    {
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+    }
     public static void ConfigureRateLimiting(this IServiceCollection services)
     {
         services.AddMemoryCache();
