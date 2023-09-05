@@ -2,6 +2,7 @@ using App.UnitOfWork;
 using AspNetCoreRateLimit;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.IdentityModel.Tokens;
 
 namespace API.Extension;
@@ -45,7 +46,10 @@ public static class AplicationServiceExtension
     {
         services.AddApiVersioning(options =>
         {
-
+            options.DefaultApiVersion = new ApiVersion(1, 0);
+            options.AssumeDefaultVersionWhenUnspecified = true;
+            options.ApiVersionReader = new QueryStringApiVersionReader("v");
+            
         });
     }
 }
