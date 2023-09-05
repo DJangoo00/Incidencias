@@ -21,7 +21,7 @@ public class IncidenciasContext : DbContext
     public DbSet<PersonType> PersonTypes { get; set; }
     public DbSet<TrainerClassroom> TrainerClassrooms { get; set; }
     public DbSet<Departament> Departaments { get; set; }
-    public DbSet<Country> Countrys { get; set; }
+    public DbSet<Country> Countries { get; set; }
     public DbSet<Gender> Genders { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

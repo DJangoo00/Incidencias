@@ -16,5 +16,7 @@ namespace Domain.Interfaces
         IPersonTypeRepository PersonTypes { get; }
         ISubjectRepository Subjects { get; }
         //ITrainerClassroomRepository TrainerClassrooms { get; }
+
+        Task<int> SaveAsync();
     }
 }

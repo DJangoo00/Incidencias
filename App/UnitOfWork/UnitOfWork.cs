@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 using App.Repository;
-using Domain.Entities;
 using Domain.Interfaces;
 using Persistence;
 
@@ -114,9 +108,9 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         }
     }
 
-    public int Save()
+    public async Task<int> SaveAsync()
     {
-        return context.SaveChanges();
+        return await context.SaveChangesAsync();
     }
     public void Dispose()
     {
